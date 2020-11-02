@@ -15,7 +15,14 @@ namespace Lab6
         string Driver();
     }
     
-        
+    public struct Conveyor
+    {
+        public string Company;
+        public enum Number : int
+        {
+            first = 1, second, third, forth, fifth, sixth, seventh, eighth, nineth
+        }
+    }
 
     public class Car : Vehicle, IMovable
     {
@@ -143,6 +150,43 @@ namespace Lab6
             foreach (IMovable Obj in Locomotive)
             {
                 Console.WriteLine(printer.IAmPrinting(Obj));
+            }
+
+            Conveyor conv = new Conveyor();
+            conv.Company = "Yellow Submarine Ltd.";
+            Console.WriteLine("Какую конвеерную ленту хотите запустить? (1-9)");
+            int choice;
+            choice = Convert.ToInt32(Console.ReadLine());
+
+            switch (choice)
+            {
+                case (int)Conveyor.Number.first:
+                    Console.WriteLine("Вы запустили конвеер 1.");
+                    break;
+                case (int)Conveyor.Number.second:
+                    Console.WriteLine("Вы запустили конвеер 2.");
+                    break;
+                case (int)Conveyor.Number.third:
+                    Console.WriteLine("Вы запустили конвеер 3.");
+                    break;
+                case (int)Conveyor.Number.forth:
+                    Console.WriteLine("Вы запустили конвеер 4.");
+                    break;
+                case (int)Conveyor.Number.fifth:
+                    Console.WriteLine("Вы запустили конвеер 5.");
+                    break;
+                case (int)Conveyor.Number.sixth:
+                    Console.WriteLine("Вы запустили конвеер 6.");
+                    break;
+                case (int)Conveyor.Number.seventh:
+                    Console.WriteLine("Вы запустили конвеер 7.");
+                    break;
+                case (int)Conveyor.Number.eighth:
+                    Console.WriteLine("Вы запустили конвеер 8.");
+                    break;
+                case (int)Conveyor.Number.nineth:
+                    Console.WriteLine("Вы запустили конвеер 9.");
+                    break;
             }
         }
     }

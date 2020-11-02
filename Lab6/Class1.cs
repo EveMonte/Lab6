@@ -15,6 +15,40 @@ namespace Lab6
             return base.ToString();
         }
     }
+
+    static class TransportAgency
+    {
+        public static List<Vehicle> Vehicles = new List<Vehicle>();
+        public static List<Vehicle> vehicles { get; set; }
+
+        public static bool Remove(Vehicle vehicle)
+        {
+            foreach (Vehicle elem in Vehicles)
+            {
+                if(vehicle == elem)
+                {
+                    Vehicles.Remove(vehicle);
+                    return true;
+                }
+            }
+            return false;
+        }
+
+        public static void Add(Vehicle vehicle)
+        {
+            Vehicles.Add(vehicle);
+            Console.WriteLine($"Вы добавили в список элемент {vehicle.Wheels}");
+        }
+
+        public static void Output()
+        {
+            Console.WriteLine("Количество колес транспорта:");
+            foreach (Vehicle vehicle in Vehicles)
+            {
+                Console.WriteLine($"Количество колес транспорта: {vehicle.Wheels}");
+            }
+        }
+    }
         class Class1
     {
     }

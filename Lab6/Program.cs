@@ -188,6 +188,8 @@ namespace Lab6
                     Console.WriteLine("Вы запустили конвеер 9.");
                     break;
             }
+
+
         }
     }
 }

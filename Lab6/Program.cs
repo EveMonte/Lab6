@@ -61,7 +61,8 @@ namespace Lab6
             Console.WriteLine("Введите мощность двигателя");
             Power = Convert.ToInt32(Console.ReadLine());
             Engine engine = new Engine(Power);
-        }
+            
+    }
 
         public override string Driver()
         {
@@ -129,8 +130,17 @@ namespace Lab6
         static void Main(string[] args)
         {
             Car car = new Car();
+            car.FuelConsumption = 10;
+            car.Speed = 250;
             Train train = new Train();
+            train.FuelConsumption = 250;
+            train.Speed = 140;
             Wagon wagon = new Wagon();
+            wagon.FuelConsumption = 0;
+            wagon.Speed = 0;
+            Express express = new Express();
+            express.FuelConsumption = 350;
+            express.Speed = 200;
 
             Console.WriteLine(car.ToString());
             Console.WriteLine(car.GetHashCode());
@@ -189,6 +199,18 @@ namespace Lab6
                     break;
             }
 
+            TransportAgency.Add(car);
+            TransportAgency.Add(wagon);
+            TransportAgency.Add(train);
+            TransportAgency.Add(express);
+            TransportAgency.Output();
+
+            Console.WriteLine("\nПосле выборки по скорости:");
+            Controller.SpeedRange(TransportAgency.Vehicles, 150, 260);
+
+            Controller.SortByFuelConsumption(TransportAgency.Vehicles);
+            Console.WriteLine("\nПосле соритровки по расходу топлива:");
+            TransportAgency.Output();
 
         }
     }

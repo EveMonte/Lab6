@@ -18,6 +18,43 @@ namespace Lab6
             return base.GetHashCode();
         }
         public abstract string Driver();
+        public int Speed;
+        public decimal FuelConsumption;
+    }
+
+    class Controller
+    {
+
+        public static void SortByFuelConsumption(List<Vehicle> v)
+        {
+            //List<Vehicle> V = new List<Vehicle>();
+            Vehicle temp;
+            for (int i = 0; i < v.Count; i++)
+            {
+                for (int j = i + 1; j < v.Count; j++)
+                {
+                    if(v[i].FuelConsumption > v[j].FuelConsumption)
+                    {
+                        temp = Compare(v[i], v[j]);
+                        v[j] = v[i];
+                        v[i] = temp;
+                    }
+                    
+                    
+                    
+                }
+            }
+        }
+        public static void SpeedRange(List<Vehicle> v, int sp1, int sp2)
+        {
+            for(int i = 0; i < v.Count; i++)
+            {
+                if((v[i].Speed <= sp2) && (v[i]).Speed >= sp1)
+                {
+                    Console.WriteLine($"Информация о единице транспорта:\n Скорость:{v[i].Speed} \nРасход топлива: {v[i].FuelConsumption}");
+                }
+            }
+        }
 
     }
     class Class2

@@ -16,7 +16,7 @@ namespace Lab6
         }
     }
 
-    static class TransportAgency
+    class TransportAgency
     {
         public static List<Vehicle> Vehicles = new List<Vehicle>();
         public static List<Vehicle> vehicles { get; set; }
@@ -45,7 +45,7 @@ namespace Lab6
             Console.WriteLine("Количество колес транспорта:");
             foreach (Vehicle vehicle in Vehicles)
             {
-                Console.WriteLine($"Количество колес транспорта: {vehicle.Wheels}");
+                Console.WriteLine($"Информация о единице транспорта:\n Скорость:{vehicle.Speed} \nРасход топлива: {vehicle.FuelConsumption}");
             }
         }
     }

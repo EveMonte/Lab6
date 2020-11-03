@@ -1,4 +1,5 @@
 ﻿using System;
+using System.IO;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -25,6 +26,8 @@ namespace Lab6
     class Controller
     {
 
+
+
         public static void SortByFuelConsumption(List<Vehicle> v)
         {
             //List<Vehicle> V = new List<Vehicle>();
@@ -35,7 +38,7 @@ namespace Lab6
                 {
                     if(v[i].FuelConsumption > v[j].FuelConsumption)
                     {
-                        temp = Compare(v[i], v[j]);
+                        temp = v[j];
                         v[j] = v[i];
                         v[i] = temp;
                     }
@@ -53,6 +56,23 @@ namespace Lab6
                 {
                     Console.WriteLine($"Информация о единице транспорта:\n Скорость:{v[i].Speed} \nРасход топлива: {v[i].FuelConsumption}");
                 }
+            }
+        }
+        public static void ReadCollectionFromFile()
+        {
+            string path = @"C:\Users\User\Desktop\ООП\Lab6\Lab6\TextFile.txt";
+            string temp;
+            List<string> CollectionOfStrings = new List<string>();
+            StreamReader sr = new StreamReader(path);
+            do
+            {
+                temp = sr.ReadLine();
+                CollectionOfStrings.Add(temp);
+            }
+            while (temp != null);
+            foreach(string str in CollectionOfStrings)
+            {
+                Console.WriteLine(str);
             }
         }
 

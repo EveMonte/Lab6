@@ -212,6 +212,8 @@ namespace Lab6
             Console.WriteLine("\nПосле соритровки по расходу топлива:");
             TransportAgency.Output();
 
+            Controller.ReadCollectionFromFile();
+
         }
     }
 }

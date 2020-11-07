@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using Newtonsoft.Json;
 
 namespace Lab6
 {
@@ -49,7 +50,19 @@ namespace Lab6
             }
         }
     }
+    public class JsonTester
+    {
+        public int Number;
+        public string Str { get; set; }
+
+        public JsonTester(int number, string str) {
+            Number = number;
+            Str = str;
+        }
+
+    }
         class Class1
     {
+        
     }
 }

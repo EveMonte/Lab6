@@ -4,6 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using Lab6;
+using Newtonsoft.Json;
 
 namespace Lab6
 {
@@ -214,6 +215,11 @@ namespace Lab6
 
             Controller.ReadCollectionFromFile();
 
+            var JS = new JsonTester(27, "Yellow Submarine Ltd.");
+            var json = JsonConvert.SerializeObject(JS, Formatting.Indented);
+            Console.WriteLine(json);
+            var NewInfo = JsonConvert.DeserializeObject<JsonTester>(json);
+            Console.WriteLine(NewInfo.Str + NewInfo.Number);
         }
     }
 }
